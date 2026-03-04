@@ -3,377 +3,404 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/components/ui/os';
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-os-dark pt-24 pb-16">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
-        
-        {/* ========== HERO - Meet Jared ========== */}
-        <section className="mb-16">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            {/* Left - Photo */}
+    <main className="min-h-screen bg-[#030812] pt-28 pb-20">
+      <div className="max-w-[1100px] mx-auto px-6">
+
+        {/* ========== HERO — Mission Statement ========== */}
+        <section className="mb-24 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <p className="text-xs font-heading font-semibold uppercase tracking-[0.2em] text-gold mb-6">
+              About GreenLine365
+            </p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-light text-white tracking-tight leading-[1.1] mb-8">
+              The Operating System for Your{' '}
+              <span className="text-gradient-gold font-semibold">Local Economy</span>
+            </h1>
+            <p className="text-base sm:text-lg font-body text-white/55 max-w-3xl mx-auto leading-relaxed mb-10">
+              GreenLine365 is a curated community directory built to connect you with
+              verified local businesses, mobile services that come to your door, and
+              destination guides that reveal the hidden gems in your city. No ads.
+              No pay-to-play rankings. Just the best of your neighborhood, organized
+              and easy to find.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="/#categories"
+                className="btn-primary px-8 py-3 rounded-full text-sm"
+              >
+                Explore the Directory
+              </Link>
+              <Link
+                href="/contact"
+                className="btn-ghost px-8 py-3 rounded-full text-sm"
+              >
+                Suggest a Business
+              </Link>
+            </div>
+          </motion.div>
+        </section>
+
+        <div className="section-divider-gold mb-24" />
+
+        {/* ========== THE WHY — Community Mission ========== */}
+        <section className="mb-24">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="text-xs font-heading font-semibold uppercase tracking-[0.2em] text-gold mb-4">
+                Why We Built This
+              </p>
+              <h2 className="text-3xl md:text-4xl font-heading font-light text-white tracking-tight mb-6">
+                Finding a Reliable Local Pro{' '}
+                <span className="text-gradient-gold font-semibold">
+                  Shouldn&apos;t Feel Like a Gamble
+                </span>
+              </h2>
+              <div className="space-y-4 font-body text-sm text-white/55 leading-relaxed">
+                <p>
+                  Generic search engines bury the best local businesses under ads,
+                  outdated listings, and companies that aren&apos;t even in your area
+                  anymore. You end up scrolling through ten pages of noise just to find
+                  someone who can fix your AC or detail your car.
+                </p>
+                <p>
+                  GreenLine365 was built to fix that. We&apos;re a{' '}
+                  <strong className="text-white font-medium">curated local ecosystem</strong>{' '}
+                  where every business is categorized, verified, and easy to reach — whether
+                  you need an HVAC tech at 2 AM or the best barber in Ybor City.
+                </p>
+                <p>
+                  This isn&apos;t a project built in Silicon Valley. It was built right
+                  here in{' '}
+                  <strong className="text-gold font-medium">Tampa, Florida</strong>{' '}
+                  by someone who spent 16 years in professional kitchens and five years
+                  crawling through attics as an HVAC technician. We know what it&apos;s
+                  like to need a good pro and not know who to call.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="relative rounded-2xl overflow-hidden border border-neon-green-500/30">
+              <div className="relative rounded-2xl overflow-hidden border border-gold/10">
                 <Image
                   src="/images/jared-family.jpg"
-                  alt="Jared Tucker with nephews and dog Ajax in Tampa"
+                  alt="GreenLine365 founder with family in Tampa, Florida"
                   width={600}
                   height={500}
                   className="w-full h-auto object-cover"
-                  priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-os-dark/90 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <p className="text-white/80 text-sm italic">
-                    Family time with my nephews and my loyal friend Ajax. Moments like these remind us of the importance of taking care of the health of our family and loved ones.
+                <div className="absolute inset-0 bg-gradient-to-t from-[#030812]/90 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <p className="text-white/60 text-sm font-body italic">
+                    Built by real people, for real neighborhoods.
                   </p>
                 </div>
               </div>
-              <div className="absolute -inset-4 bg-neon-green-500/5 rounded-3xl blur-2xl -z-10" />
-            </motion.div>
-            
-            {/* Right - Intro */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="text-neon-green-500 text-xs font-bold tracking-widest uppercase mb-3 block">Meet the Founder</span>
-              <h1 className="font-display font-bold text-white mb-4" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
-                I&apos;m <span className="text-neon-green-500">Jared Tucker</span>
-              </h1>
-              <div className="space-y-4 text-white/70 text-sm leading-relaxed">
-                <p>
-                  I&apos;m building GreenLine365 right here in <strong className="text-white">Tampa, Florida</strong>. I&apos;m 42 years old, and my background isn&apos;t in tech or Silicon Valley—it&apos;s in the real world.
-                </p>
-                <p>
-                  I&apos;ve spent <strong className="text-neon-green-500">16 years in professional kitchens</strong> and the last five years crawling through attics as an <strong className="text-neon-green-500">HVAC technician</strong>. I know exactly what it feels like to work a 12-hour day and still have a mountain of &quot;to-do&quot; tasks waiting for you at home.
-                </p>
-              </div>
-              
-              <div className="mt-6 flex items-center gap-4">
-                <div className="glass rounded-xl p-3 border border-white/10 text-center">
-                  <div className="text-2xl font-bold text-neon-green-500">16</div>
-                  <div className="text-xs text-white/50">Years in Kitchens</div>
-                </div>
-                <div className="glass rounded-xl p-3 border border-white/10 text-center">
-                  <div className="text-2xl font-bold text-neon-green-500">5</div>
-                  <div className="text-xs text-white/50">Years HVAC</div>
-                </div>
-                <div className="glass rounded-xl p-3 border border-white/10 text-center">
-                  <div className="text-2xl font-bold text-neon-green-500">42</div>
-                  <div className="text-xs text-white/50">Years Young</div>
-                </div>
-              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* ========== WHERE THE IDEA STARTED ========== */}
-        <section className="mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass-strong rounded-2xl p-6 md:p-8 border border-neon-green-500/20"
-          >
-            <div className="flex items-start gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-red-500/20 flex items-center justify-center flex-shrink-0">
-                <span className="text-2xl">💔</span>
-              </div>
-              <div>
-                <h2 className="text-xl font-display font-bold text-white mb-1">Where the Idea Started</h2>
-                <p className="text-white/50 text-sm">Born from my own failure</p>
-              </div>
-            </div>
-            
-            <div className="space-y-4 text-white/70 text-sm leading-relaxed">
-              <p>
-                GreenLine365 was born from my own failure. I tried to launch a <strong className="text-white">print-on-demand shop on Etsy</strong>, and while I had no problem creating the products—the canvas art, the mugs, the designs—I hit a wall with everything else.
-              </p>
-              <p>
-                I spent hours writing descriptions, building mockups, and trying to &quot;feed the algorithm&quot; on social media. <strong className="text-red-400">I didn&apos;t fail because my products were bad; I failed because the tedious, repetitive tasks consumed my life.</strong>
-              </p>
-              <p>
-                I realized then that most apps are built for profit and exit strategies, but I wanted to build something for the people actually doing the work.
-              </p>
-            </div>
-          </motion.div>
-        </section>
+        <div className="section-divider-gold mb-24" />
 
-        {/* ========== MY PRODUCTS - The Work That Started It All ========== */}
-        <section className="mb-16">
+        {/* ========== HOW IT WORKS ========== */}
+        <section className="mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-8"
+            className="text-center mb-14"
           >
-            <span className="text-neon-green-500 text-xs font-bold tracking-widest uppercase mb-3 block">The Work That Started It All</span>
-            <h2 className="font-display font-bold text-white mb-3" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>
-              These Are My <span className="text-neon-green-500">Actual Products</span>
+            <p className="text-xs font-heading font-semibold uppercase tracking-[0.2em] text-gold mb-4">
+              How It Works
+            </p>
+            <h2 className="text-3xl md:text-4xl font-heading font-light text-white tracking-tight mb-4">
+              A Smarter Way to{' '}
+              <span className="text-gradient-gold font-semibold">Discover Local</span>
             </h2>
-            <p className="text-white/60 text-sm max-w-2xl mx-auto">
-              The canvas art and mugs I created that started this whole journey. I&apos;ve been in the trenches and I understand the grind.
+            <p className="text-sm font-body text-white/50 max-w-2xl mx-auto">
+              Everything you need to find, save, and connect with the best
+              businesses in your area.
             </p>
           </motion.div>
 
-          {/* Product Grid */}
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            {/* Canvas Art */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="space-y-4"
-            >
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 group">
-                <Image
-                  src="/images/city-skyline-art.jpg"
-                  alt="City skyline canvas art with light trails"
-                  width={500}
-                  height={400}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-os-dark via-transparent to-transparent" />
-                <div className="absolute bottom-3 left-3">
-                  <span className="glass-green px-3 py-1 rounded-full text-xs text-neon-green-400 font-semibold">Canvas Art</span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              {
+                icon: '\u{1F50D}',
+                title: 'Curated, Not Crowded',
+                description:
+                  'Every business is logically categorized and vetted. No pay-to-play rankings. No clutter. Just the pros who earned their spot.',
+              },
+              {
+                icon: '\u{1F690}',
+                title: 'Mobile Services',
+                description:
+                  'We spotlight mobile-first businesses — detailers, mobile mechanics, groomers — pros who deliver exceptional service right to your door.',
+              },
+              {
+                icon: '\u{2B50}',
+                title: 'Save Your Favorites',
+                description:
+                  'Create a free profile to bookmark businesses, access exclusive community coupons, and get notified about local deals.',
+              },
+              {
+                icon: '\u{1F5FA}\u{FE0F}',
+                title: 'Explore Destinations',
+                description:
+                  'Our curated travel guides include Entertainment Loops and hidden gems inside each Destination page — your personal concierge to Florida.',
+              },
+            ].map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="glass rounded-2xl p-6 border border-white/5 hover:border-gold/30 transition-all duration-300"
+              >
+                <div className="w-10 h-10 rounded-lg glass-gold flex items-center justify-center mb-4">
+                  <span className="text-xl">{feature.icon}</span>
                 </div>
-              </div>
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 group">
-                <Image
-                  src="/images/heart-balloon-art.jpg"
-                  alt="Heart balloon romantic canvas art"
-                  width={500}
-                  height={400}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-os-dark via-transparent to-transparent" />
-                <div className="absolute bottom-3 left-3">
-                  <span className="glass-green px-3 py-1 rounded-full text-xs text-neon-green-400 font-semibold">Canvas Art</span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Mugs */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="space-y-4"
-            >
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 group">
-                <Image
-                  src="/images/mugs-affection.jpg"
-                  alt="Verdant Affection and Passionate Foliage mugs"
-                  width={500}
-                  height={400}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-os-dark via-transparent to-transparent" />
-                <div className="absolute bottom-3 left-3">
-                  <span className="glass-green px-3 py-1 rounded-full text-xs text-neon-green-400 font-semibold">Custom Mugs</span>
-                </div>
-              </div>
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 group">
-                <Image
-                  src="/images/mugs-decaf.jpg"
-                  alt="Decaf economy themed mug"
-                  width={500}
-                  height={400}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-os-dark via-transparent to-transparent" />
-                <div className="absolute bottom-3 left-3">
-                  <span className="glass-green px-3 py-1 rounded-full text-xs text-neon-green-400 font-semibold">Custom Mugs</span>
-                </div>
-              </div>
-            </motion.div>
+                <h3 className="text-white font-heading font-semibold text-sm mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-white/50 font-body text-xs leading-relaxed">
+                  {feature.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
+        </section>
 
-          {/* The Message */}
+        {/* ========== STATS BAR ========== */}
+        <section className="mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass rounded-2xl p-6 border border-neon-green-500/30 text-center"
+            className="glass rounded-2xl p-8 border border-gold/10"
           >
-            <p className="text-white/80 text-base leading-relaxed mb-4">
-              <span className="text-neon-green-500 font-semibold">Imagine what these could have become</span> if GreenLine365 had existed when I was building them. AI-generated descriptions, smart hashtags, automated posting schedules—all the things that ate up my nights and weekends.
-            </p>
-            <p className="text-white/60 text-sm">
-              That&apos;s exactly why I&apos;m building this—so you don&apos;t have to go through what I did.
-            </p>
-          </motion.div>
-        </section>
-
-        {/* ========== BUILT FOR THE MICRO-BUSINESS ========== */}
-        <section className="mb-16">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            {/* Left - Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <span className="text-neon-green-500 text-xs font-bold tracking-widest uppercase mb-3 block">Built for You</span>
-              <h2 className="font-display font-bold text-white mb-4" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>
-                Built for the <span className="text-neon-green-500">Micro-Business</span>
-              </h2>
-              <div className="space-y-4 text-white/70 text-sm leading-relaxed">
-                <p>
-                  I&apos;m building this for the local economy—the <strong className="text-white">barbershops</strong>, the <strong className="text-white">service pros</strong>, and the <strong className="text-white">makers</strong> who are tired of decision-making fatigue.
-                </p>
-                <p>
-                  If you&apos;re a shop owner who hates having to lay off staff during slow seasons, or a creator who just wants their time back, I&apos;m building this for you.
-                </p>
-                <p className="text-neon-green-500 font-semibold">
-                  My goal is to help you win back roughly 15 hours a week by automating the tasks that steal your time.
-                </p>
-              </div>
-            </motion.div>
-            
-            {/* Right - Features */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-4"
-            >
-              <div className="glass rounded-xl p-4 border border-neon-green-500/20 flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-lg bg-neon-green-500/20 flex items-center justify-center flex-shrink-0">
-                  <span className="text-xl">📊</span>
-                </div>
-                <div>
-                  <h4 className="text-white font-semibold text-sm mb-1">Daily Trend Hunter</h4>
-                  <p className="text-white/60 text-xs">Handle your social media presence by feeding the algorithm for you.</p>
-                </div>
-              </div>
-              <div className="glass rounded-xl p-4 border border-neon-green-500/20 flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-lg bg-neon-green-500/20 flex items-center justify-center flex-shrink-0">
-                  <span className="text-xl">💰</span>
-                </div>
-                <div>
-                  <h4 className="text-white font-semibold text-sm mb-1">Revenue Tracking</h4>
-                  <p className="text-white/60 text-xs">Simple tracking for growth with print-outs ready for taxes.</p>
-                </div>
-              </div>
-              <div className="glass rounded-xl p-4 border border-neon-green-500/20 flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-lg bg-neon-green-500/20 flex items-center justify-center flex-shrink-0">
-                  <span className="text-xl">🌱</span>
-                </div>
-                <div>
-                  <h4 className="text-white font-semibold text-sm mb-1">Sustainability</h4>
-                  <p className="text-white/60 text-xs">Grow your visibility and revenue while you actually get to live your life.</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* ========== VISION BEYOND SOFTWARE ========== */}
-        <section className="mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass-strong rounded-2xl p-6 md:p-8 border border-neon-green-500/20"
-          >
-            <div className="flex items-start gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-neon-green-500/20 flex items-center justify-center flex-shrink-0">
-                <span className="text-2xl">🚀</span>
-              </div>
-              <div>
-                <h2 className="text-xl font-display font-bold text-white mb-1">A Vision Beyond Software</h2>
-                <p className="text-white/50 text-sm">This is just the beginning</p>
-              </div>
-            </div>
-            
-            <div className="space-y-4 text-white/70 text-sm leading-relaxed">
-              <p>
-                This goes way beyond just a simple software platform. While we&apos;re starting here to build revenue and a great team, I have a <strong className="text-neon-green-500">five-year, five-phase plan</strong> that nobody would expect.
-              </p>
-              <p>
-                GreenLine365 will eventually evolve into a <strong className="text-white">massive directory and ecosystem</strong> that serves both businesses and consumers. I&apos;m keeping some details quiet for now to protect these &quot;world-changing&quot; ideas.
-              </p>
-              <p className="text-neon-green-500 font-semibold">
-                This isn&apos;t a project I&apos;m looking to flip—it&apos;s a foundation I&apos;m building to change the game for small businesses everywhere.
-              </p>
-            </div>
-            
-            {/* Phase Indicators */}
-            <div className="mt-6 flex items-center gap-2">
-              {[1, 2, 3, 4, 5].map((phase) => (
-                <div key={phase} className="flex-1">
-                  <div className={`h-2 rounded-full ${phase === 1 ? 'bg-neon-green-500' : 'bg-white/10'}`} />
-                  <p className="text-xs text-white/40 mt-1 text-center">Phase {phase}</p>
-                </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              {[
+                { value: '538+', label: 'Verified Businesses' },
+                { value: '13', label: 'Categories' },
+                { value: '8', label: 'Florida Destinations' },
+                { value: '100%', label: 'Free to Browse' },
+              ].map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <div className="text-3xl font-heading font-light text-gold mb-1">
+                    {stat.value}
+                  </div>
+                  <span className="block text-[10px] sm:text-xs text-white/50 uppercase tracking-wider font-body">
+                    {stat.label}
+                  </span>
+                </motion.div>
               ))}
             </div>
           </motion.div>
         </section>
 
-        {/* ========== COMMITMENT / CTA ========== */}
-        <section className="mb-16">
+        <div className="section-divider-gold mb-24" />
+
+        {/* ========== POWERED BY — Trust & Technology ========== */}
+        <section className="mb-24">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="text-xs font-heading font-semibold uppercase tracking-[0.2em] text-gold mb-4">
+                Built With Modern Technology
+              </p>
+              <h2 className="text-3xl md:text-4xl font-heading font-light text-white tracking-tight mb-6">
+                Accurate Info.{' '}
+                <span className="text-gradient-gold font-semibold">Always Up to Date.</span>
+              </h2>
+              <div className="space-y-4 font-body text-sm text-white/55 leading-relaxed">
+                <p>
+                  GreenLine365 is powered by AI and smart automation to ensure
+                  listings stay accurate, categories stay relevant, and you always
+                  have the most up-to-date information at your fingertips. No stale
+                  phone numbers. No businesses that closed two years ago.
+                </p>
+                <p>
+                  <strong className="text-white font-medium">Your privacy matters.</strong>{' '}
+                  Our platform is built with{' '}
+                  <strong className="text-gold font-medium">AES-256 encryption</strong>{' '}
+                  — the same standard used by major financial institutions. When you
+                  create a profile, your data is protected at the highest level.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-4"
+            >
+              {[
+                { icon: '\u{1F916}', title: 'AI-Powered Accuracy', desc: 'Listings are monitored and updated using intelligent automation so you never get bad info.' },
+                { icon: '\u{1F510}', title: 'AES-256 Encryption', desc: 'Military-grade security protects your profile and personal data.' },
+                { icon: '\u{1F6AB}', title: 'No Pay-to-Play', desc: 'Rankings are earned through quality and community trust, not advertising dollars.' },
+                { icon: '\u{1F4F1}', title: 'Mobile-First Design', desc: 'Built to work beautifully on your phone — find a pro from anywhere.' },
+              ].map((badge) => (
+                <div
+                  key={badge.title}
+                  className="glass rounded-xl p-4 border border-white/5 hover:border-gold/30 flex gap-4 items-start transition-all duration-300"
+                >
+                  <div className="w-10 h-10 rounded-lg glass-gold flex items-center justify-center flex-shrink-0">
+                    <span className="text-xl">{badge.icon}</span>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-heading font-semibold text-sm mb-1">
+                      {badge.title}
+                    </h4>
+                    <p className="text-white/50 font-body text-xs leading-relaxed">
+                      {badge.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        <div className="section-divider-gold mb-24" />
+
+        {/* ========== FOR BUSINESS OWNERS ========== */}
+        <section className="mb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="glass rounded-2xl p-8 md:p-12 border border-gold/10 text-center"
+          >
+            <div className="w-14 h-14 rounded-xl glass-gold flex items-center justify-center mx-auto mb-6">
+              <span className="text-2xl">\u{1F3C6}</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-heading font-light text-white tracking-tight mb-4">
+              Are You a Local Business?{' '}
+              <span className="text-gradient-gold font-semibold">Join the Directory.</span>
+            </h2>
+            <p className="text-sm font-body text-white/55 max-w-2xl mx-auto mb-8 leading-relaxed">
+              Being listed on GreenLine365 means your business has been recognized
+              as part of the curated local ecosystem. It&apos;s not just a listing —
+              it&apos;s a mark of trust that tells your community you&apos;re the real deal.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="/signup-business"
+                className="btn-primary px-8 py-3 rounded-full text-sm"
+              >
+                Add Your Business
+              </Link>
+              <Link
+                href="/pricing"
+                className="btn-ghost px-8 py-3 rounded-full text-sm"
+              >
+                View Listing Tiers
+              </Link>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* ========== COMMUNITY ENGAGEMENT ========== */}
+        <section className="mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="font-display font-bold text-white mb-4" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>
-              My Commitment to <span className="text-neon-green-500">You</span>
+            <p className="text-xs font-heading font-semibold uppercase tracking-[0.2em] text-gold mb-4">
+              Built Together
+            </p>
+            <h2 className="text-3xl md:text-4xl font-heading font-light text-white tracking-tight mb-4">
+              Help Us Grow the{' '}
+              <span className="text-gradient-gold font-semibold">Directory</span>
             </h2>
-            <p className="text-white/70 text-sm max-w-2xl mx-auto mb-6 leading-relaxed">
-              If you&apos;re tired of doing 20 jobs just to keep one business alive, join me on this mission to take our time back. I&apos;ve been in the trenches, and I&apos;m building the tools I wish I had.
+            <p className="text-sm font-body text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
+              Know a great local business that should be listed? Spotted outdated info?
+              We&apos;re building this together. Your input makes the directory better
+              for everyone.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/pricing">
-                <Button variant="primary" size="lg">
-                  Get Started Today
-                </Button>
+              <Link
+                href="/contact?type=suggest"
+                className="btn-primary px-8 py-3 rounded-full text-sm"
+              >
+                Suggest a Business
               </Link>
-              <Link href="/#trend-demo">
-                <Button variant="secondary" size="lg">
-                  Try the Demo
-                </Button>
+              <Link
+                href="/contact?type=report"
+                className="btn-ghost px-8 py-3 rounded-full text-sm"
+              >
+                Report an Issue
+              </Link>
+              <Link
+                href="/contact"
+                className="btn-ghost px-8 py-3 rounded-full text-sm"
+              >
+                Contact Us
               </Link>
             </div>
           </motion.div>
         </section>
 
-        {/* ========== LOCATION / TAMPA PRIDE ========== */}
+        {/* ========== TAMPA PRIDE ========== */}
         <section>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass rounded-2xl p-6 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-4"
+            className="glass rounded-2xl p-6 border border-white/5 flex flex-col md:flex-row items-center justify-between gap-4"
           >
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-neon-green-500/20 flex items-center justify-center">
-                <span className="text-2xl">📍</span>
+              <div className="w-12 h-12 rounded-full glass-gold flex items-center justify-center">
+                <span className="text-xl">\u{1F4CD}</span>
               </div>
               <div>
-                <p className="text-white font-semibold">Proudly Built in Tampa, Florida</p>
-                <p className="text-white/50 text-sm">Supporting local businesses, one feature at a time</p>
+                <p className="text-white font-heading font-semibold text-sm">
+                  Proudly Built in Tampa, Florida
+                </p>
+                <p className="text-white/50 font-body text-xs">
+                  Curating the best of Florida&apos;s local economy, one neighborhood at a time
+                </p>
               </div>
             </div>
-            <div className="flex items-center gap-2 text-white/40 text-sm">
-              <span>🌴</span>
-              <span>Made with ☀️ in the Sunshine State</span>
+            <div className="flex items-center gap-2 text-white/40 text-xs font-body">
+              <span>\u{1F334}</span>
+              <span>Made with \u{2600}\u{FE0F} in the Sunshine State</span>
             </div>
           </motion.div>
         </section>
-
       </div>
     </main>
   );
